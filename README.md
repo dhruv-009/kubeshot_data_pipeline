@@ -1,6 +1,6 @@
 # Data Processing AWS Infrastructure
 
-This project sets up AWS infrastructure for data processing and reporting. It includes AWS Lambda functions, S3 buckets, AWS Glue jobs, and AWS Quicksight resources.
+This project sets up AWS infrastructure for data processing and reporting. It includes AWS Lambda functions, S3 buckets, AWS Glue jobs, AWS SNS and AWS Quicksight resources.
 
 ## Project Structure
 
