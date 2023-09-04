@@ -32,7 +32,7 @@ resource "aws_s3_object" "script_object" {
 # Create an S3 object for the Python library in the 'lib' folder
 resource "aws_s3_object" "script_object_1" {
   bucket = aws_s3_bucket.script_bucket.id
-  key    = "lib/data_pipeline_glue_job-0.1-py3-none-any.whl"
+  key    = "lib/${var.wheel_file_name}"
   source = "./dist/app.py"
 }
 
@@ -224,7 +224,7 @@ resource "aws_glue_job" "data_processing_glue_job" {
   default_arguments = {
     "--input_bucket" = aws_s3_bucket.json_bucket.id
     "--job-language" = "python"
-   "--extra-py-files" = "s3://${aws_s3_bucket.script_bucket.bucket}/lib/data_pipeline_glue_job-0.1-py3-none-any.whl"
+   "--extra-py-files" = "s3://${aws_s3_bucket.script_bucket.bucket}/lib/${var.wheel_file_name}"
   }
 }
 

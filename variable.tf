@@ -58,3 +58,8 @@ variable "data_source_quicksight" {
     description = "Name of the data source"
     type = string
 }
+
+variable "wheel_file_name" {
+  description = "Name of the wheel file"
+  type        = string
+}
